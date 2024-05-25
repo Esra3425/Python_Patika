@@ -35,16 +35,20 @@ input: [[1, 2], [3, 4], [5, 6, 7]]
 output: [[[7, 6, 5], [4, 3], [2, 1]]
 
 
-def reverse_nested_list(nested_list):    
+def reverse_nested_list(nested_list):
+   
     def reverse_list(lst):
-        reversed_list = []    
-        for item in reversed(lst):   
-            if isinstance(item, list):            
-                reversed_list.append(reverse_list(item))                 
-            else:            
-                reversed_list.append(item)         
+        reversed_list = []
+        for item in reversed(lst): 
+            if isinstance(item, list):
+                reversed_list.append(reverse_list(item))  
+            else:
+                reversed_list.append(item)
         return reversed_list
+
     return reverse_list(nested_list)
+
+
 
 # Örnek kullanım
 
